@@ -1,0 +1,367 @@
+{
+  "platform": "PTL",
+  "platform_desc": "PTL (Intel Arc B390 (Panther Lake, iGPU), Xe2; 105 GB/s, FP16 58.982 TFLOPS, INT8 117.964 TOPS)",
+  "decode_total_ms": 46.21317,
+  "decode_rows": [
+    {
+      "name": "fc_up (INT4 g=128)",
+      "log": "fc_up_decode_M1",
+      "ms": 0.25585,
+      "calls": 36,
+      "total": 9.210600000000001,
+      "ai": 3.8448060075093866,
+      "gbs": 102.33196013289036,
+      "tops": 0.0003934465350791479,
+      "eff": 97.45900965037177,
+      "bound": "memory"
+    },
+    {
+      "name": "fc_down (INT4 g=128)",
+      "log": "fc_down_decode_M1",
+      "ms": 0.25548,
+      "calls": 36,
+      "total": 9.19728,
+      "ai": 3.8448060075093866,
+      "gbs": 102.48016283074998,
+      "tops": 0.00039401634570220765,
+      "eff": 97.60015507690474,
+      "bound": "memory"
+    },
+    {
+      "name": "fc_gate (INT4 g=128)",
+      "log": "fc_gate_decode_M1",
+      "ms": 0.255191,
+      "calls": 36,
+      "total": 9.186876,
+      "ai": 3.8448060075093866,
+      "gbs": 102.59622008613157,
+      "tops": 0.00039446256333491386,
+      "eff": 97.71068579631577,
+      "bound": "memory"
+    },
+    {
+      "name": "lm_head (INT8 g=128)",
+      "log": "lm_head_decode_M1",
+      "ms": 6.030042,
+      "calls": 1,
+      "total": 6.030042,
+      "ai": 1.9682589804220665,
+      "gbs": 104.86922379645117,
+      "tops": 0.0002064097915072565,
+      "eff": 99.8754512347154,
+      "bound": "memory"
+    },
+    {
+      "name": "fc_qkv (INT4 g=128)",
+      "log": "fc_qkv_decode_M1",
+      "ms": 0.129218,
+      "calls": 36,
+      "total": 4.651848,
+      "ai": 3.843603378167032,
+      "gbs": 101.33968951694037,
+      "tops": 0.0003895095729697101,
+      "eff": 96.51399001613369,
+      "bound": "memory"
+    },
+    {
+      "name": "pa_decode (kv=4096)",
+      "log": "pa_decode_kv4096",
+      "ms": 0.109518,
+      "calls": 36,
+      "total": 3.942648,
+      "ai": 8.0,
+      "gbs": 76.5957011632791,
+      "tops": 0.0006127656093062328,
+      "eff": 72.94828682217057,
+      "bound": "memory"
+    },
+    {
+      "name": "fc_o (INT4 g=128)",
+      "log": "fc_o_decode_M1",
+      "ms": 0.087263,
+      "calls": 36,
+      "total": 3.1414679999999997,
+      "ai": 3.8424015009380863,
+      "gbs": 100.07302063875869,
+      "tops": 0.00038452072470577446,
+      "eff": 95.30763870357971,
+      "bound": "memory"
+    },
+    {
+      "name": "rmsnorm (H=4096)",
+      "log": "so_rmsnorm_h4096_decode",
+      "ms": 0.003127,
+      "calls": 72,
+      "total": 0.225144,
+      "ai": 0.25,
+      "gbs": 5.239526702910138,
+      "tops": 1.3098816757275345e-06,
+      "eff": 4.990025431342988,
+      "bound": "memory"
+    },
+    {
+      "name": "add (residual)",
+      "log": "so_add_decode",
+      "ms": 0.001931,
+      "calls": 72,
+      "total": 0.139032,
+      "ai": 0.16666666666666666,
+      "gbs": 12.727084412221647,
+      "tops": 2.1211807353702743e-06,
+      "eff": 12.121032773544425,
+      "bound": "memory"
+    },
+    {
+      "name": "mul (gate*up)",
+      "log": "so_multiply_decode",
+      "ms": 0.002885,
+      "calls": 36,
+      "total": 0.10386,
+      "ai": 0.16666666666666666,
+      "gbs": 25.555632582322357,
+      "tops": 4.2592720970537255e-06,
+      "eff": 24.338697697449863,
+      "bound": "memory"
+    },
+    {
+      "name": "q_norm",
+      "log": "so_rmsnorm3d_qnorm_decode",
+      "ms": 0.002413,
+      "calls": 36,
+      "total": 0.086868,
+      "ai": 0.25,
+      "gbs": 6.789888106092001,
+      "tops": 1.6974720265230003e-06,
+      "eff": 6.466560101040002,
+      "bound": "memory"
+    },
+    {
+      "name": "k_norm",
+      "log": "so_rmsnorm3d_knorm_decode",
+      "ms": 0.002384,
+      "calls": 36,
+      "total": 0.085824,
+      "ai": 0.25,
+      "gbs": 1.7181208053691275,
+      "tops": 4.295302013422819e-07,
+      "eff": 1.6363055289229784,
+      "bound": "memory"
+    },
+    {
+      "name": "rope_q",
+      "log": "so_rope_q_decode",
+      "ms": 0.002141,
+      "calls": 36,
+      "total": 0.077076,
+      "ai": 2.5,
+      "gbs": 7.652498832321345,
+      "tops": 1.9131247080803365e-05,
+      "eff": 7.288094126020328,
+      "bound": "memory"
+    },
+    {
+      "name": "rope_k",
+      "log": "so_rope_k_decode",
+      "ms": 0.001974,
+      "calls": 36,
+      "total": 0.071064,
+      "ai": 2.5,
+      "gbs": 2.0749746707193517,
+      "tops": 5.187436676798379e-06,
+      "eff": 1.9761663530660494,
+      "bound": "memory"
+    },
+    {
+      "name": "swish (gate)",
+      "log": "so_swish_decode",
+      "ms": 0.001765,
+      "calls": 36,
+      "total": 0.06354,
+      "ai": 1.0,
+      "gbs": 27.84815864022663,
+      "tops": 2.784815864022663e-05,
+      "eff": 26.522055847834885,
+      "bound": "memory"
+    }
+  ],
+  "decode_total_ms_by_kv": {
+    "1024": 44.359422,
+    "2048": 45.577374000000006,
+    "4096": 46.213170000000005,
+    "8192": 49.771770000000004,
+    "16384": 56.909958,
+    "32768": 71.504322,
+    "65536": 100.68012599999999,
+    "131072": 159.46337400000002
+  },
+  "sweeps": {
+    "decode_kv_sweep": [
+      {
+        "kv": 1024,
+        "FC/layer (ms)": 0.9830019999999999,
+        "PA/layer (ms)": 0.058025,
+        "small/layer (ms)": 0.023678,
+        "FC total (ms)": 35.388071999999994,
+        "PA total (ms)": 2.0889,
+        "small total (ms)": 0.852408,
+        "lm_head (ms)": 6.030042,
+        "decode total (ms)": 44.359422,
+        "tok/s": 22.54312511105307
+      },
+      {
+        "kv": 2048,
+        "FC/layer (ms)": 0.9830019999999999,
+        "PA/layer (ms)": 0.091857,
+        "small/layer (ms)": 0.023678,
+        "FC total (ms)": 35.388071999999994,
+        "PA total (ms)": 3.3068519999999997,
+        "small total (ms)": 0.852408,
+        "lm_head (ms)": 6.030042,
+        "decode total (ms)": 45.577374000000006,
+        "tok/s": 21.940711195866612
+      },
+      {
+        "kv": 4096,
+        "FC/layer (ms)": 0.9830019999999999,
+        "PA/layer (ms)": 0.109518,
+        "small/layer (ms)": 0.023678,
+        "FC total (ms)": 35.388071999999994,
+        "PA total (ms)": 3.942648,
+        "small total (ms)": 0.852408,
+        "lm_head (ms)": 6.030042,
+        "decode total (ms)": 46.213170000000005,
+        "tok/s": 21.638853166748785
+      },
+      {
+        "kv": 8192,
+        "FC/layer (ms)": 0.9830019999999999,
+        "PA/layer (ms)": 0.208368,
+        "small/layer (ms)": 0.023678,
+        "FC total (ms)": 35.388071999999994,
+        "PA total (ms)": 7.501248,
+        "small total (ms)": 0.852408,
+        "lm_head (ms)": 6.030042,
+        "decode total (ms)": 49.771770000000004,
+        "tok/s": 20.09171062230658
+      },
+      {
+        "kv": 16384,
+        "FC/layer (ms)": 0.9830019999999999,
+        "PA/layer (ms)": 0.406651,
+        "small/layer (ms)": 0.023678,
+        "FC total (ms)": 35.388071999999994,
+        "PA total (ms)": 14.639436,
+        "small total (ms)": 0.852408,
+        "lm_head (ms)": 6.030042,
+        "decode total (ms)": 56.909958,
+        "tok/s": 17.571617255454658
+      },
+      {
+        "kv": 32768,
+        "FC/layer (ms)": 0.9830019999999999,
+        "PA/layer (ms)": 0.81205,
+        "small/layer (ms)": 0.023678,
+        "FC total (ms)": 35.388071999999994,
+        "PA total (ms)": 29.233800000000002,
+        "small total (ms)": 0.852408,
+        "lm_head (ms)": 6.030042,
+        "decode total (ms)": 71.504322,
+        "tok/s": 13.985168616800534
+      },
+      {
+        "kv": 65536,
+        "FC/layer (ms)": 0.9830019999999999,
+        "PA/layer (ms)": 1.622489,
+        "small/layer (ms)": 0.023678,
+        "FC total (ms)": 35.388071999999994,
+        "PA total (ms)": 58.409604,
+        "small total (ms)": 0.852408,
+        "lm_head (ms)": 6.030042,
+        "decode total (ms)": 100.68012599999999,
+        "tok/s": 9.932446846560364
+      },
+      {
+        "kv": 131072,
+        "FC/layer (ms)": 0.9830019999999999,
+        "PA/layer (ms)": 3.255357,
+        "small/layer (ms)": 0.023678,
+        "FC total (ms)": 35.388071999999994,
+        "PA total (ms)": 117.192852,
+        "small total (ms)": 0.852408,
+        "lm_head (ms)": 6.030042,
+        "decode total (ms)": 159.46337400000002,
+        "tok/s": 6.271032494270439
+      }
+    ],
+    "prefill_table": [
+      {
+        "S": 1024,
+        "fc_qkv/layer": 0.829957,
+        "fc_o/layer": 0.604882,
+        "fc_gate/layer": 1.697532,
+        "fc_up/layer": 1.589124,
+        "fc_down/layer": 1.903169,
+        "PA/layer": 0.67734,
+        "total est (ms)": 268.902186
+      },
+      {
+        "S": 2048,
+        "fc_qkv/layer": 1.653332,
+        "fc_o/layer": 1.211295,
+        "fc_gate/layer": 3.00904,
+        "fc_up/layer": 2.996495,
+        "fc_down/layer": 3.552686,
+        "PA/layer": 2.401484,
+        "total est (ms)": 539.705994
+      },
+      {
+        "S": 4096,
+        "fc_qkv/layer": 3.141078,
+        "fc_o/layer": 2.255911,
+        "fc_gate/layer": 5.966574,
+        "fc_up/layer": 5.846453,
+        "fc_down/layer": 6.958907,
+        "PA/layer": 9.048586,
+        "total est (ms)": 1201.860366
+      },
+      {
+        "S": 8192,
+        "fc_qkv/layer": 6.234603,
+        "fc_o/layer": 4.589874,
+        "fc_gate/layer": 11.852753,
+        "fc_up/layer": 11.893261,
+        "fc_down/layer": 14.347799,
+        "PA/layer": 35.357231,
+        "total est (ms)": 3039.948798
+      },
+      {
+        "S": 16384,
+        "fc_qkv/layer": 13.168049,
+        "fc_o/layer": 9.454449,
+        "fc_gate/layer": 24.055203,
+        "fc_up/layer": 23.600361,
+        "fc_down/layer": 28.060774,
+        "PA/layer": 139.614451,
+        "total est (ms)": 8572.348374
+      },
+      {
+        "S": 32768,
+        "fc_qkv/layer": 25.371936,
+        "fc_o/layer": 18.05964,
+        "fc_gate/layer": 47.736557,
+        "fc_up/layer": 59.84432,
+        "fc_down/layer": 56.592195,
+        "PA/layer": 673.613427,
+        "total est (ms)": 31729.880741999998
+      }
+    ]
+  },
+  "prefill_total_ms": {
+    "1024": 268.902186,
+    "2048": 539.705994,
+    "4096": 1201.860366,
+    "8192": 3039.948798,
+    "16384": 8572.348374,
+    "32768": 31729.880741999998
+  }
+}

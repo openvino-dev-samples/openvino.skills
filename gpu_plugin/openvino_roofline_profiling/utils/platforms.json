@@ -38,14 +38,15 @@
     "l3_mib_measured": 16,
     "global_mem_gib": 16.5,
     "bw_gbs_spec": 110.0,
-    "bw_gbs_measured_read": 94.0,
+    "bw_gbs_measured_read": 105.0,
+    "bw_gbs_measured_read_memcpy": 94.0,
     "bw_gbs_measured_copy_rw": 99.0,
     "fp16_xmx_tflops": 58.982,
     "int8_xmx_tops": 117.964,
     "kernel_launch_us": null,
     "ai_star_ops_per_byte": 627.5,
     "memory_kind": "USM_DEVICE",
-    "notes": "Host-shared LPDDR5x; effective GPU BW is ~86% of spec because the channel is shared with the CPU. cliloader misidentifies as PTL — same arch as PTL spec."
+    "notes": "Host-shared LPDDR5x; effective GPU BW is ~86% of spec because the channel is shared with the CPU. cliloader misidentifies as PTL — same arch as PTL spec. bw_gbs_measured_read=105 is the streaming-read peak observed by INT4/INT8 weight-stream gemm_kernel on this rig; bw_gbs_measured_read_memcpy=94 is the conservative single-buffer memcpy number used by hw_probe."
   },
   "LNL": {
     "name": "Intel Arc 140V (Lunar Lake, iGPU)",
